@@ -3,7 +3,7 @@
 <body>
 
 <h1>Bookmarklets</h1>
-<h2>"(you drag these to your browser's bookmarks bar. on Edge, they're called Favourites.)"</h2>
+<h2>(you drag these to your browser's bookmarks bar. on Edge, they're called Favourites.)</h2>
 <a href="javascript:(function()%7Blet%20uwu%20%3D%20location.href%0Alet%20continueBool%0Alet%20origURL%20%3D%20prompt(%22Please%20enter%20website%20URL%5Cn(Example%3A%20play2048.co)%22%2Clocation.href)%0Aif%20(origURL%20%3D%3D%3D%20null)%0A%20%20exit%0Awhile%20(origURL%20%3D%3D%3D%20%22%22)%0A%20%20origURL%20%3D%20prompt(%22No%20input.%20Please%20enter%20website%20URL%20or%20press%20cancel.%5Cn(Example%3A%20play2048.co)%22)%0A%20%20if%20(origURL%20%3D%3D%3D%20null)%0A%20%20%20%20exit%0Alet%20newURL%20%3D%20%22https%5C%3A%5C%2F%5C%2Fweb.archive.org%5C%2F%22%20%2B%20origURL%0Aif%20(origURL%20%3D%3D%3D%20uwu)%0A%20%20continueBool%20%3D%20confirm(%22Just%20a%20note%2C%20you%20haven't%20changed%20the%20URL.%5CnConfirm%20going%20to%20this%20site%3F%5Cn%22%20%2B%20newURL)%0Aelse%0A%20%20continueBool%20%3D%20confirm(%22Confirm%20going%20to%20this%20site%3F%5Cn%22%20%2B%20newURL)%0Aif%20(continueBool%20%3D%3D%3D%20true)%0A%20%20window.open(newURL)%0Aelse%20if%20(continueBool%20%3D%3D%3D%20false)%0A%20%20exit%7D)()%3B">Internet Archive</a>
 
 </body>
