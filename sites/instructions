@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<h1> This entire thing is made for a specific educational institute in the United Kingdom. If you were linked here, you are probably from there.</h1>
+<h1> Your computer will also need admin for all of this.
+</head>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<body>
+<h2>HOWTO: show ALL settings (you only need to do this once)</h2>
+<p>gpedit &gt; computer configuration &gt; administrative templates &gt; control panel<br>
+settings page visibility: set to enabled and the value to &quot;hide:&quot;<br>
+what this does is make a list of what to hide, but you havent entered anything to hide, so everything is shown</p>
+
+<br>
+<br>
+<br>
+
+<h2>HOWTO: Disable proxy globally across entire pc (do both):</h2>
+<h3>&gt; THIS DOES NOT WORK ANYMORE FOR SOME PEOPLE!</h3>
+<p>1) gpedit &gt; Computer Configuration &gt; Administrative Templates &gt; Windows Components &gt; Internet Explorer
+&quot;Make proxy settings per-machine (rather than per-user)&quot;<br>
+Set this to Enabled, press apply, then set it to Disabled, and press apply. Then press OK.<br>
+<br>
+2) gpedit &gt; User Configuration &gt; Administrative Templates &gt; Windows Components &gt; Internet Explorer &gt;<br>
+&quot;prevent changing proxy settings&quot;<br>
+Set this to Enabled, press apply, then set it to Disabled, and press apply. Then press OK.</p>
+
+<br>
+<br>
+<br>
+
+<h2>HOWTO: Remove MDM (Mobile Device Management) policies</h2>
+<p>gpedit &gt; Computer configuration &gt; Administrative Templates &gt; Windows Components &gt; MDM &gt;<br>
+&quot;Disable MDM Enrollment&quot;<br>
+Set this to Enabled, press apply, then set it to Disabled, and press apply. Then press OK.</p>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<h1> OPTIONAL:
+<br>
+<p>THESE NO LONGER WORK!!! USE TotalReg.exe and Powershell instead!<br>
+&gt; TotalReg is from https://github.com/zodiacon/TotalRegistry<br>
+&gt; Remember to run TotalRegistry as elevated (admin)</p>
+
+<!--IGNORE THESE BELOW COMMENTS-->
+<!--DO NOT USE!! 	enable regedit and cmd until restart:-->
+<!--		gpedit > User Configuration > Administrative Templates > System-->
+<!--		&quot;prevent access to registry editing tools&quot; and &quot;prevent access to the command prompt&quot;-->
+
+<br>
+<br>
+
+<h1>Disable Smoothwall forced extension on Edge (and even install your own forced!):</h1>
+<p>&gt; source: https://admx.help/?Category=EdgeChromium&Policy=Microsoft.Policies.Edge::ExtensionInstallForcelist<br>
+&gt; this WILL likely reset every time you restart/turn off machine for more than 10m<br>
+you will need to change this again every once in a while, so probably copy your custom value somewhere.<br>
+Registry &gt; HKEY_LOCAL_MACHINE &gt; SOFTWARE &gt; Policies &gt; Microsoft &gt; Edge &gt; ExtensionInstallForcelist<br>
+Inside this key (folder), there should be: <br>
+	a subkey (file) &quot;1&quot; type REG_SZ<br>
+		a value of: [Random jumble]\;https://edge.microsoft.com/extensionwebstorebase/v1/crx<br>
+The random jumble of letters is the Extension ID of the extension.<br>
+this extension ID can be found on a link.<br>
+e.g. https://microsoftedge.microsoft.com/addons/detail/ublock-origin/odfafepnkmbhccpbejgmiehpchacaeak?hl=en-GB<br>
+removing the &quot;?hl=en-GB&quot; part because that is just your language.<br>
+therefore, Extension ID of uBlock origin is odfafepnkmbhccpbejgmiehpchacaeak<br>
+so, you would therefore replace the original random string with this uBlock origin ID, to stop forcing Smoothwall and start focing uBlock Origin.<br>
+so, it would become: <br>
+odfafepnkmbhccpbejgmiehpchacaeak\;https://edge.microsoft.com/extensionwebstorebase/v1/crx<br>
+note that I don't know how to do this with Chrome Webstore yet, and you can only find extensions from Edge Extension store.<br>
+So, the first one forced is a REG_SZ named 1.<br>
+if you want more forced installs, make more REG_SZ's named 2, or 3, or 4, etc.<p>
+
+<br>
+<br>
+<br>
+
+
+<h1>Disable blocking every single extension from being installed:</h1>
+<p>&gt; source: https://admx.help/?Category=EdgeChromium&Policy=Microsoft.Policies.Edge::ExtensionInstallBlocklist<br>
+&gt; this WILL likely reset every time you restart/turn off machine for more than 10m<br>
+Registry &gt; HKEY_CURRENT_USER &gt; SOFTWARE &gt; Policies &gt; Microsoft &gt; Edge &gt; ExtensionInstallBlocklist<br>
+Inside this key (folder), there should be:<br>
+	a subkey (file) &quot;1&quot;, type REG_SZ<br>
+By default, this is set to &quot;*&quot; (asterisk), meaning that everything is blocked except for stuff in the allow list or forced list (above).<br>
+To allow installing every extension, you set this value to blank.<p>
+
+<br>
+<br>
+<br>
+
+
+<h1>Disable proxy machine wide and make it per-user (also known as basically disabling it) (likely required upon restart)</h1>
+<p>Registry &gt; HKEY_LOCAL_MACHINE &gt; Software &gt; Policies &gt; Microsoft &gt; Windows &gt; CurrentVersion &gt; Internet Settings<br>
+set ProxySettingsPerUser to 1.</p>
+</body>
+</html>
