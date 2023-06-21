@@ -1,26 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<!-- saved from url=(0040)http://meyerweb.com/eric/tools/dencoder/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<!-- saved from url=(0041)https://meyerweb.com/eric/tools/dencoder/ -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="color-scheme" content="light dark"></head><body><div class="line-gutter-backdrop"></div><form autocomplete="off"><label class="line-wrap-control">Line wrap<input type="checkbox" aria-label="Line wrap"></label></form><table><tbody><tr><td class="line-number" value="1"></td><td class="line-content"><span class="html-doctype">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"
-			"http://www.w3.org/TR/REC-html40/strict.dtd"&gt;</span>
-<span class="html-tag">&lt;html&gt;</span>
-<span class="html-tag">&lt;head&gt;</span>
-<span class="html-tag">&lt;meta <span class="html-attribute-name">http-equiv</span>="<span class="html-attribute-value">content-type</span>" <span class="html-attribute-name">content</span>="<span class="html-attribute-value">text/html; charset=utf-8</span>"&gt;</span>
-<span class="html-tag">&lt;title&gt;</span>URL Decoder/Encoder<span class="html-tag">&lt;/title&gt;</span>
-<span class="html-tag">&lt;style <span class="html-attribute-name">type</span>="<span class="html-attribute-value">text/css</span>"&gt;</span>
-&lt;!--
+<title>URL Decoder/Encoder</title>
+<style type="text/css">
+<!--
 body {background: white; color: black;}
 form {margin: 0;}
-h1 {font-family: Arial, sans-serif; line-height: 0.85em; border-bottom: 2px solid;
+h1 {font-family: Arial, sans-serif; line-height: 0.85em;
   margin-bottom: 0.33em; padding-bottom: 0;}
 
 textarea {background: #EEF;}
 
-#footer {border-top: 1px solid #000; color: #999; font: italic 75% sans-serif;}
+#footer {color: #999; font: italic 75% sans-serif;}
 #footer p {margin: 0 0 1em 0;}
 #footer img {float: right; margin: 0 0 0.5em 2em;}
---&gt;
-<span class="html-tag">&lt;/style&gt;</span>
-<span class="html-tag">&lt;script <span class="html-attribute-name">type</span>="<span class="html-attribute-value">text/javascript</span>"&gt;</span>
+-->
+</style>
+<script type="text/javascript">
 function encode() {
 	var obj = document.getElementById('dencoder');
 	var unencoded = obj.value;
@@ -31,40 +28,35 @@ function decode() {
 	var encoded = obj.value;
 	obj.value = decodeURIComponent(encoded.replace(/\+/g,  " "));
 }
-<span class="html-tag">&lt;/script&gt;</span>
-<span class="html-tag">&lt;/head&gt;</span>
-<span class="html-tag">&lt;body&gt;</span>
+</script>
+<style type="text/css"></style></head>
+<body>
 
 
-<span class="html-tag">&lt;form <span class="html-attribute-name">onsubmit</span>="<span class="html-attribute-value">return false;</span>"&gt;</span>
-<span class="html-tag">&lt;h1&gt;</span>URL Decoder/Encoder<span class="html-tag">&lt;/h1&gt;</span>
+<form onsubmit="return false;">
+<h1>URL Decoder/Encoder</h1>
 
-<span class="html-tag">&lt;textarea <span class="html-attribute-name">cols</span>="<span class="html-attribute-value">100</span>" <span class="html-attribute-name">rows</span>="<span class="html-attribute-value">20</span>" <span class="html-attribute-name">id</span>="<span class="html-attribute-value">dencoder</span>"&gt;</span><span class="html-tag">&lt;/textarea&gt;</span>
-<span class="html-tag">&lt;div&gt;</span>
-<span class="html-tag">&lt;input <span class="html-attribute-name">type</span>="<span class="html-attribute-value">button</span>" <span class="html-attribute-name">onclick</span>="<span class="html-attribute-value">decode()</span>" <span class="html-attribute-name">value</span>="<span class="html-attribute-value">Decode</span>"&gt;</span>
-<span class="html-tag">&lt;input <span class="html-attribute-name">type</span>="<span class="html-attribute-value">button</span>" <span class="html-attribute-name">onclick</span>="<span class="html-attribute-value">encode()</span>" <span class="html-attribute-name">value</span>="<span class="html-attribute-value">Encode</span>"&gt;</span>
-<span class="html-tag">&lt;/div&gt;</span>
-
-<span class="html-tag">&lt;ul&gt;</span>
-<span class="html-tag">&lt;li&gt;</span>Input a string of text and encode or decode it as you like.<span class="html-tag">&lt;/li&gt;</span>
-<span class="html-tag">&lt;li&gt;</span>Handy for turning encoded JavaScript URLs from complete gibberish into readable gibberish.<span class="html-tag">&lt;/li&gt;</span>
-<span class="html-tag">&lt;li&gt;</span>I stole this from https://meyerweb.com/eric/tools/dencoder/ because that site wasn't loading properly for me<span class="html-tag">&lt;/li&gt;</span>
-<span class="html-tag">&lt;/ul&gt;</span>
-
-<span class="html-tag">&lt;/form&gt;</span>
+<textarea cols="100" rows="20" id="dencoder"></textarea>
+<div>
+<input type="button" onclick="decode()" value="Decode">
+<input type="button" onclick="encode()" value="Encode">
+</div>
 
 
-<span class="html-tag">&lt;div <span class="html-attribute-name">id</span>="<span class="html-attribute-value">footer</span>"&gt;</span>
-<span class="html-tag">&lt;img <span class="html-attribute-name">alt</span>="<span class="html-attribute-value">Creative Commons License</span>" <span class="html-attribute-name">border</span>="<span class="html-attribute-value">0</span>" <span class="html-attribute-name">src</span>="<a class="html-attribute-value html-resource-link" target="_blank" href="https://creativecommons.org/images/public/somerights.gif" rel="noreferrer noopener">//creativecommons.org/images/public/somerights.gif</a>"&gt;</span>
-<span class="html-tag">&lt;p&gt;</span>
-<span class="html-tag">&lt;br&gt;</span>
-The URL Decoder/Encoder is licensed under a Creative Commons <span class="html-tag">&lt;a <span class="html-attribute-name">href</span>="<a class="html-attribute-value html-external-link" target="_blank" href="http://creativecommons.org/licenses/by-sa/2.0/" rel="noreferrer noopener">http://creativecommons.org/licenses/by-sa/2.0/</a>" <span class="html-attribute-name">rel</span>="<span class="html-attribute-value">license</span>"&gt;</span>Attribution-ShareAlike 2.0<span class="html-tag">&lt;/a&gt;</span> License.
-<span class="html-tag">&lt;/p&gt;</span>
-<span class="html-tag">&lt;p&gt;</span>
-This tool is provided without warranty, guarantee, or much in the way of explanation.  Note that use of this tool may or may not crash your browser, lock up your machine, erase your hard drive, or e-mail those naughty pictures you hid in the Utilities folder to your mother.  Don't blame me if anything bad happens to you, because it's actually the aliens' fault.  The code expressed herein is solely that of the author, and he's none too swift with the JavaScript, if you know what we mean, so it's likely to cause giggle fits in anyone who knows what they're doing.  Not a flying toy.  Thank you for playing.  Insert coin to continue.
-<span class="html-tag">&lt;/p&gt;</span>
-<span class="html-tag">&lt;/div&gt;</span>
+</form>
 
-<span class="html-tag">&lt;/body&gt;</span>
-<span class="html-tag">&lt;/html&gt;</span>
-<span class="html-end-of-file"></span></td></tr></tbody></table></body></html>
+
+<div id="footer">
+<img alt="Creative Commons License" border="0" src="./index_files/somerights.gif">
+<p>
+<br>
+The URL Decoder/Encoder is licensed under a Creative Commons <a href="http://creativecommons.org/licenses/by-sa/2.0/" rel="license">Attribution-ShareAlike 2.0</a> License.
+</p>
+<p>
+Adapted from: http://meyerweb.com/eric/tools/dencoder/
+</p>
+</div>
+
+
+
+</body></html>
